@@ -1,5 +1,13 @@
+import { Outlet } from 'react-router-dom';
+
 const LoginLayout = () => {
-    return <div>LoginLayout</div>;
+    return (
+        <section>
+            <div>
+                <Outlet />
+            </div>
+        </section>
+    );
 };
 
 export default LoginLayout;
