@@ -1,16 +1,19 @@
 import { Outlet } from 'react-router-dom';
 import Header from '../Components/Header/Header';
 import Footer from '../Components/Footer/Footer';
+import UserStorage from '../Context/UserContext';
 
 const RootLayout = () => {
     return (
         <>
             <Header />
-            <section className="App">
-                <main className="AppBody">
-                    <Outlet />
-                </main>
-            </section>
+            <UserStorage>
+                <section className="App">
+                    <main className="AppBody">
+                        <Outlet />
+                    </main>
+                </section>
+            </UserStorage>
             <Footer />
         </>
     );
