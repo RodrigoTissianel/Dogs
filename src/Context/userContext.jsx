@@ -1,5 +1,5 @@
 import React from 'react';
-import { TOKEN_POST, USER_GET } from '../Api';
+import { TOKEN_POST, TOKEN_VALIDATE_POST, USER_GET } from '../Api';
 import { useNavigate } from 'react-router-dom';
 
 export const UserContext = React.createContext();
@@ -38,9 +38,41 @@ const UserStorage = ({ children }) => {
         }
     }
 
+    const userLogout = React.useCallback(async function () {
+        setData('');
+        setError(null);
+        setLoading(false);
+        setLogin(false);
+        window.localStorage.removeItem('token');
+    }, []);
+
+    React.useEffect(() => {
+        async function autoLogin() {
+            const token = window.localStorage.getItem('token');
+            if (token) {
+                try {
+                    setError(null);
+                    setLoading(true);
+                    const { url, options } = TOKEN_VALIDATE_POST(token);
+                    const response = await fetch(url, options);
+                    if (!response.ok) throw new Error('Token inválido');
+                    await getUser(token);
+                } catch (err) {
+                    userLogout();
+                } finally {
+                    setLoading(false);
+                }
+            } else {
+                setLogin(false);
+            }
+        }
+
+        autoLogin();
+    }, [userLogout]);
+
     return (
         <UserContext.Provider
-            value={{ userLogin, data, login, loading, error }}
+            value={{ userLogin, userLogout, data, login, loading, error }}
         >
             {children}
         </UserContext.Provider>
