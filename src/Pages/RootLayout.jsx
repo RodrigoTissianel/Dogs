@@ -7,15 +7,15 @@ import '../App.css';
 const RootLayout = () => {
     return (
         <>
-            <Header />
             <UserStorage>
+                <Header />
                 <section className="App">
                     <main className="AppBody">
                         <Outlet />
                     </main>
                 </section>
+                <Footer />
             </UserStorage>
-            <Footer />
         </>
     );
 };
