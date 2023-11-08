@@ -1,12 +1,15 @@
 import { Outlet } from 'react-router-dom';
+import ProtectedRoute from '../../Components/Helper/ProtectedRoute/ProtectedRoute';
 
 const UserLayout = () => {
     return (
-        <section>
-            <div>
-                <Outlet />
-            </div>
-        </section>
+        <ProtectedRoute>
+            <section className="container">
+                <div>
+                    <Outlet />
+                </div>
+            </section>
+        </ProtectedRoute>
     );
 };
 
