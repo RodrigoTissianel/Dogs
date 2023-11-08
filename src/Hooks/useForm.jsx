@@ -6,7 +6,7 @@ const types = {
         message: 'Preencha um email inválido',
     },
     password: {
-        Regex: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+        Regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
         message:
             'A senha deve conter no mínimo 8 caracteres, com pelo menos um maiúsculo e um dígito numérico',
     },
@@ -34,6 +34,7 @@ const useForm = (type) => {
     function onChange({ target }) {
         if (error) validate(target.value);
         setValue(target.value);
+        console.log(target.value);
     }
 
     return {
