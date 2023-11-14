@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 
 const Header = () => {
-    const { data, userLogout } = React.useContext(UserContext);
+    const { data } = React.useContext(UserContext);
 
     return (
         <header className={styles.header}>
@@ -19,7 +19,6 @@ const Header = () => {
                         <Link to="/account" className={styles.login}>
                             {data.nome}
                         </Link>
-                        <button onClick={userLogout}>Sair</button>
                     </div>
                 ) : (
                     <div>
