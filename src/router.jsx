@@ -10,6 +10,7 @@ import UserLayout from './Pages/User/UserLayout';
 import Feed from './Components/Feed/Feed';
 import UserPhotoPost from './Pages/User/UserPhotoPost/UserPhotoPost';
 import UserStats from './Pages/User/UserStats/UserStats';
+import Photo from './Pages/Photo/Photo';
 
 const router = createBrowserRouter([
     {
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
                         element: <UserStats />,
                     },
                 ],
+            },
+            {
+                path: 'foto/:id',
+                element: <Photo />,
             },
         ],
     },
