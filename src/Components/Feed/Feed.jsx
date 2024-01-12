@@ -2,6 +2,7 @@ import React from 'react';
 import FeedModal from './FeedModal/FeedModal';
 import FeedPhotos from './FeedPhotos/FeedPhotos';
 import { useOutletContext } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Feed = ({ user }) => {
     const username = useOutletContext();
@@ -52,6 +53,17 @@ const Feed = ({ user }) => {
             ))}
         </div>
     );
+};
+
+Feed.defaultProps = {
+    user: 0,
+};
+
+Feed.propTypes = {
+    user: PropTypes.oneOfType([
+        PropTypes.string.isRequired,
+        PropTypes.number.isRequired,
+    ]),
 };
 
 export default Feed;
