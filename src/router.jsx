@@ -12,6 +12,7 @@ import UserPhotoPost from './Pages/User/UserPhotoPost/UserPhotoPost';
 import UserStats from './Pages/User/UserStats/UserStats';
 import Photo from './Pages/Photo/Photo';
 import UserProfile from './Pages/User/UserProfile/UserProfile';
+import NotFound from './Pages/NotFound/NotFound';
 
 const router = createBrowserRouter([
     {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
                         path: 'reset',
                         element: <LoginPasswordReset />,
                     },
+                    {
+                        path: '*',
+                        element: <NotFound />,
+                    },
                 ],
             },
             {
@@ -60,6 +65,10 @@ const router = createBrowserRouter([
                         path: 'statistics',
                         element: <UserStats />,
                     },
+                    {
+                        path: '*',
+                        element: <NotFound />,
+                    },
                 ],
             },
             {
@@ -69,6 +78,10 @@ const router = createBrowserRouter([
             {
                 path: 'profile/:user',
                 element: <UserProfile />,
+            },
+            {
+                path: '*',
+                element: <NotFound />,
             },
         ],
     },
