@@ -6,6 +6,7 @@ import Input from '../../../Components/Input/Input';
 import { UserContext } from '../../../Context/UserContext';
 import useFetch from '../../../Hooks/useFetch';
 import useForm from '../../../Hooks/useForm';
+import Head from '../../../Components/Helper/Head/Head';
 
 const LoginCreate = () => {
     const username = useForm();
@@ -27,6 +28,7 @@ const LoginCreate = () => {
 
     return (
         <section className="animeLeft">
+            <Head title="Criar conta" />
             <h1 className="title">Cadastre-se</h1>
             <form onSubmit={handleSubmit}>
                 <Input

@@ -7,6 +7,7 @@ import Button from '../../../Components/Button/Button';
 import { UserContext } from '../../../Context/UserContext';
 import Error from '../../../Components/Helper/Error/Error';
 import { Link } from 'react-router-dom';
+import Head from '../../../Components/Helper/Head/Head';
 
 const LoginForm = () => {
     const username = useForm();
@@ -24,6 +25,7 @@ const LoginForm = () => {
 
     return (
         <section className="animeLet">
+            <Head title="Login" />
             <h1 className="title">Login</h1>
             <form onSubmit={handleSubmit} className={styles.form}>
                 <Input
