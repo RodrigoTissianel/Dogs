@@ -62,7 +62,7 @@ const router = createBrowserRouter([
                 ],
             },
             {
-                path: 'foto/:id',
+                path: 'photo/:id',
                 element: <Photo />,
             },
         ],
