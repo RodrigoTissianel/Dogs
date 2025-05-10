@@ -16,7 +16,7 @@ import NotFound from './Pages/NotFound/NotFound';
 
 const router = createBrowserRouter([
     {
-        path: '/',
+        path: 'https://rodrigotissianel.vercel.app/dogs',
         element: <RootLayout />,
         children: [
             {

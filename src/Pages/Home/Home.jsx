@@ -3,13 +3,13 @@ import Head from '../../Components/Helper/Head/Head';
 
 const Home = () => {
     return (
-        <div>
+        <section className=" container mainContainer">
             <Head
                 title="Fotos"
                 description="Home de site Dogs, com o feed de fotos"
             />
             <Feed />
-        </div>
+        </section>
     );
 };
 
